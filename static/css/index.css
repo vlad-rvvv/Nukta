@@ -1,8 +1,13 @@
 @charset "UTF-8";
-* {
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  height: 100%;
+}
+
+.clearfix {
+  height: 1%;
 }
 
 a {
@@ -535,10 +540,6 @@ a {
   }
 }
 
-.main_content {
-  height: 100%;
-}
-
 .services {
   display: block;
   padding-top: 5em;
@@ -867,9 +868,4 @@ a {
 }
 .about_us .wrapper .nutshell .advantage .wrapper_advantage .text p {
   font-size: 18px;
-}
-
-.google_cart{
-  width: 300px;
-  height: 100%;
 }

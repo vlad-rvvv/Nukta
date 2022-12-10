@@ -1,0 +1,37 @@
+@import "../common_scss/colors";
+
+.desc{
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 5em;
+    
+    h1{
+        text-align: center;
+    }
+
+    p{
+        font-size: 24px;
+    }
+
+    h3{
+        font-size: 28px;
+        text-align: center;
+        font-weight: 300;
+        color: $primary;
+    }
+
+    @media only screen and (max-width: 1025px){
+        h1{
+            font-size: 26px;
+        }
+
+        p{
+            font-size: 21px;
+        }
+
+        h3{
+            font-size: 26px;
+        }
+    }
+}

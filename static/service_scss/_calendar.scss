@@ -1,0 +1,170 @@
+@import "../common_scss/colors";
+
+*{
+  overflow-x: visible;
+
+  @media only screen and (max-width: 600px){
+    overflow-x: hidden;
+  }
+}
+
+.calendar_div{
+  display: block;
+  margin: 0 auto;
+  margin-top: 5em;
+
+  h1{
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 1025px){
+    h1{
+      font-size: 26px;
+    }
+  }
+}
+
+.calendar{
+  margin: 0 auto;
+  margin-top: 3em;
+  width: 60%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media only screen and (max-width: 600px){
+    width: 100%;
+  }
+
+  .calendar_head{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $primary;
+    height: 60px;
+
+    h1{
+      color: white;
+      cursor: default;
+      font-weight: 500;
+      font-size: 26;
+    }
+
+    div{
+      border-radius: 50%;
+      transition: background-color .5s linear;
+
+      i{
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      &:active{
+        background-color: rgba($color: #00000067, $alpha: .3);
+        transition: background-color .01s linear;
+      }
+    }
+  }
+
+  .calendar_body{
+    padding-bottom: 3em;
+
+    .days{
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      width: 80%;
+      margin: 30px auto;
+      cursor: default;
+      // border: solid 2px black;
+
+      h1{
+        font-size: 26px;
+      }
+
+      & .weknd{
+        color: red;
+      }
+
+      @media only screen and (max-width: 769px){
+        font-size: 26px;
+      }
+    }
+
+    .dates{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      width: 80%;
+      margin: 0 auto;
+      // border: solid 2px red;
+
+      div{
+        border-radius: 50%;
+        background-color: $primary;
+        width: 60px;
+        height: 60px;
+        margin: 7px 0;
+        cursor: pointer;
+        transition: background-color .5s linear;
+
+        &:hover{
+          background-color: darken($primary, $amount: 15%);
+          transition: background-color .5s linear;
+        }
+
+        p{
+          font-size: 26px;
+          color: white;
+          padding: 15px;
+          text-align: center;
+        }
+
+        @media only screen and (max-width: 2565px){
+          margin: 7px 30%;
+        }
+
+        @media only screen and (max-width: 1441px){
+          margin: 7px 20%;
+        }
+
+        @media only screen and (max-width: 1025px){
+          border-radius: 0%;
+          margin-left: 0%;
+        }
+
+        @media only screen and (max-width: 769px){
+          margin-left: 0%;
+          width: 50px;
+          height: 50px;
+
+          p{
+            font-size: 26px;
+            padding: 10px;
+          }
+        }
+
+        @media only screen and (max-width: 600px){
+          margin: 3px 0px;
+          width: 45px;
+          height: 45px;
+
+          p{
+            font-size: 21px;
+            padding: 10px;
+          }
+
+          &:hover{
+            background-color: darken($primary, $amount: 0%);
+            transition: none .5s linear;
+          }
+
+          // &:active{
+          //   background-color: darken($primary, $amount: 15%);
+          //   transition: background-color .5s linear;
+          // }
+        }
+      }
+    }
+  }
+}
+

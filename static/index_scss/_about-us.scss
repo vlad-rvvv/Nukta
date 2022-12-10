@@ -1,0 +1,179 @@
+@import "../common_scss/mixins";
+
+.about_us{
+    display: block;
+    padding-top: 5em;
+    // border: solid 2px black;
+    
+    h1{
+        text-align: center;
+        font-size: 32px;
+
+        @media only screen and (max-width: 1025px){
+            font-size: 26px;
+        }
+
+        @media only screen and (max-width: 600px){
+            font-size: 21px;
+        }
+    }
+
+    .wrapper{
+        display: flex;
+        width: 80%;
+        flex-flow: row nowrap;
+        padding-top: 20px;
+        margin: 0 auto;
+        // border: solid 2px rgb(112, 255, 29);
+
+        @media only screen and (max-width: 1025px){
+            width: 95%;
+        }
+
+        .collage{
+            position: relative;
+            width: 60%;
+            // border: solid 2px black;
+
+            @media only screen and (max-width: 600px){
+                display: none;
+            }
+            
+            .top_left{
+                position: absolute;
+                top: 18%;
+
+                @media only screen and (max-width: 1025px){
+                    height: 200px;
+                    top: 20%;
+                }
+            }
+
+            .top_right{
+                position: absolute;
+                left: 52%;
+                top: 8%;
+
+                @media only screen and (max-width: 1441px){
+                    left: 58%;
+                }
+
+                @media only screen and (max-width: 1025px){
+                    width: 240px;
+                    left: 50%;
+                }
+            }
+
+            .center{
+                position: absolute;
+                top: 43%;
+                left: 17%;
+
+                @media only screen and (max-width: 1441px){
+                    left: 15%;
+                    top: 40%;
+                }
+
+                @media only screen and (max-width: 1025px){
+                    height: 200px;
+                    top: 33%;
+                    left: 20%;
+                }
+            }
+
+            .bottom_right{
+                position:absolute;
+                top: 60%;
+                left: 39%;
+                z-index: -1;
+
+                @media only screen and (max-width: 1441px){
+                    top: 55%;
+                    left: 40%;
+                }
+
+                @media only screen and (max-width: 1025px){
+                    height: 200px;
+                    top: 47%;
+                    left: 43%;
+                }
+            }
+        }
+
+        .nutshell{
+            display: block;
+            width: 40%;
+
+            @media only screen and (max-width: 600px){
+                width: 100%;
+            }
+
+            .history{
+                margin-left: 10px;
+
+                h1{
+                    font-size: 32px;
+                    font-weight: 900;
+                    text-align: start;
+                    border: none;
+
+                    @media only screen and (max-width: 1025px){
+                        font-size: 26px;
+                    }
+
+                    @media only screen and (max-width: 600px){
+                        font-size: 21px;
+                    }
+                }
+
+                p{
+                    font-size: 18px;
+                    text-align: start;
+                }
+            }
+
+            .advantage{
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+                width: 90%;
+                // border: solid 1px black;
+
+                @media only screen and (max-width: 1025px){
+                    width: 100%;
+                }
+
+                .wrapper_advantage{
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .icon{
+                        display: block;
+                        background-color: #EBEBEB;
+                        border-radius: 50%;
+                        margin: 0 auto;
+                        img{
+                            height: 30px;
+                            padding: 10px;
+                        }
+                    }
+
+                    .text{
+                        display: block;
+                        width: 60%;
+
+                        h2{
+                            font-size: 18px;
+                        }
+                        p{
+                            font-size: 18px;;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
