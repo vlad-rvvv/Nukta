@@ -1,0 +1,57 @@
+{% extends 'main_service.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main_content">
+
+    <!-- Название и описание процедуры -->
+    <div class="desc">
+        <h1>Доставка препаратов ДКП</h1>
+        <p><br>Доконтактная профилактика (ДКП) — это чрезвычайно эффективный способ предотвращения передачи ВИЧ-инфекции при условии его регулярного применения. 
+
+            <br><br>Наш центр предоставляет услугу по доставке препаратов ДКП в удобное для вас место. 
+            
+            <br><br>ДКП рекомендуется людям, не зараженным ВИЧ, но попадающим в зону высокого риска заражения.
+            
+            <br><br>Те, кто решил начать ДКП, должны иметь отрицательный ВИЧ-статус и каждые три месяца заново проходить тестирование. Побочные эффекты от ДКП обычно носят умеренный и кратковременный характер. Риск развития устойчивости к препаратам ДКП крайне невелик, если перед началом лечения пациент имеет подтвержденный отрицательный ВИЧ-статус.</p>
+        <h3><br><br><br>Запишитесь к нам онлайн!</h3>
+    </div>
+
+    <!-- Календарь -->
+    <div class="calendar_div">
+        <h1>Выберите дату</h1>
+
+        <div class="calendar">
+            <div class="calendar_head">
+                <div>
+                    <i class="bx bx-chevron-left bx-md"></i>
+                </div>
+                <h1>{{month_translate}}</h1>
+                <div>
+                    <i class="bx bx-chevron-right bx-md"></i>
+                </div>
+            </div>
+            <div class="calendar_body">
+                <div class="days">
+                    <h1 class="days_item">Пн</h1>
+                    <h1 class="days_item">Вт</h1>
+                    <h1 class="days_item">Ср</h1>
+                    <h1 class="days_item">Чт</h1>
+                    <h1 class="days_item">Пт</h1>
+                    <h1 class="days_item weknd">Сб</h1>
+                    <h1 class="days_item weknd">Вс</h1>
+                </div>
+                <div class="dates">
+                    {% for date in dates %}
+                    <a href="{% url 'booking_page_7' service.id year month date %}">
+                        <div>
+                            <p>{{date}}</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock content %}

@@ -1,0 +1,89 @@
+{% extends 'main_service.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main_content">
+
+    <!-- Название и описание процедуры -->
+    <div class="desc">
+        <h1>Забор и транспортировка крови в центр СПИД</h1>
+        <p><br>Для удобства пациентов в центре действует лаборатория которая методом забора крови сможет в течении 7-10 рабочих дней поставить точный диагноз на ВИЧ на базе ЦСПИД.
+
+            <br><br>После установления точного диагноза на ВИЧ (на базе лаборатории ЦСПИД) пациент в сопровождении сотрудника Центра идет на консультацию с врачом инфекционистом для начала АРТ лечения. 
+            
+            <br><br>Единственный момент, при котором потребуется документ подтверждающий вашу личность - это момент подтверждения диагноза ВИЧ в ЦСПИД. Дальнейшее лечение от ВИЧ пациент может получать на базе Центра.</p>
+        <h3><br><br><br>Запишитесь к нам онлайн!</h3>
+    </div>
+
+    <!-- Форма -->
+    <div class="form_div">
+        <h1>Запись на прием</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="module_field">
+                <p>Имя (можно вымышленное)</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-user bx-md'></i>
+                    {{form.name}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+
+            <div class="module_field">
+                <p>Адрес</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-map bx-md'></i>
+                    {{form.address}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            
+            <div class="module_field">
+                <p>Телефон</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-phone bx-md'></i>
+                    {{form.phone_number}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            <div class="module_field">
+                <p>Пол</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-phone bx-md' id="hidden"></i>
+                    {{form.sex}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            <div class="two_module">
+                <div class="module_field">
+                    <p>Возраст</p>
+                    <div class="field">
+                        <i class='bx bx-x-circle bx-md' id="error"></i>
+                        <i class='bx bx-map bx-md' id="hidden"></i>
+                        {{form.birthday}}
+                    </div>
+                    <p class="error">Необходимо заполнить поле</p>
+                </div>
+                <div class="module_field">
+                    <p>Время записи</p>
+                    <div class="field">
+                        <i class='bx bx-x-circle bx-md' id="error"></i>
+                        <i class='bx bx-phone bx-md' id="hidden"></i>
+                        {{form.appointment_time}}
+                    </div>
+                    <p class="error">Необходимо заполнить поле</p>
+                </div>
+            </div>
+            <div class="module_field">
+                <div class="button">
+                    <input type="submit" name="" value="Записаться">
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock content %}

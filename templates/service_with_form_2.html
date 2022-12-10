@@ -1,0 +1,89 @@
+{% extends 'main_service.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main_content">
+
+    <!-- Название и описание процедуры -->
+    <div class="desc">
+        <h1>Капиллярное экспресс тестирование на ВИЧ</h1>
+        <p><br>Экспресс-тест на ВИЧ позволяет выяснить присутствие вируса иммунодефицита в организме человека. Этот тест может проводиться по слюне или образцу крови. 
+
+            <br><br>Вами выбрана услуга тестирования на ВИЧ по анализу крови. Анализ по крови – это один из самых точных экспресс-тестов. 
+            
+            <br><br>Для проведения анализа берется несколько капель крови из пальца, которая помещается на тест-полоску. После этого нужно подождать 15-25 минут, чтобы узнать результат. Этот метод аналогичен стандартному обследованию в ИФА, проводимому в медицинских организациях.
+            
+            <br><br>Почему стоит сдать анализы на ВИЧ?
+            
+            <br><br>Если в  Вашей жизни были:
+            <br>– хотя бы один контакт без презерватива 
+            <br>– хотя бы один опыт употребления наркотиков 
+            <br>– вирусный гепатит 
+            <br>– пирсинг или татуировки.
+            
+            <br><br>Хотя бы один ответ "ДА" — 100% повод сдать кровь на ВИЧ.</p>
+        <h3><br><br><br>Запишитесь к нам онлайн!</h3>
+    </div>
+
+    <!-- Форма -->
+    <div class="form_div">
+        <h1>Запись на прием</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="module_field">
+                <p>Имя (можно вымышленное)</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-user bx-md'></i>
+                    {{form.name}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            
+            <div class="module_field">
+                <p>Телефон</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-phone bx-md'></i>
+                    {{form.phone_number}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            <div class="module_field">
+                <p>Пол</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-phone bx-md' id="hidden"></i>
+                    {{form.sex}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            <div class="two_module">
+                <div class="module_field">
+                    <p>Возраст</p>
+                    <div class="field">
+                        <i class='bx bx-x-circle bx-md' id="error"></i>
+                        <i class='bx bx-map bx-md' id="hidden"></i>
+                        {{form.birthday}}
+                    </div>
+                    <p class="error">Необходимо заполнить поле</p>
+                </div>
+                <div class="module_field">
+                    <p>Время записи</p>
+                    <div class="field">
+                        <i class='bx bx-x-circle bx-md' id="error"></i>
+                        <i class='bx bx-phone bx-md' id="hidden"></i>
+                        {{form.appointment_time}}
+                    </div>
+                    <p class="error">Необходимо заполнить поле</p>
+                </div>
+            </div>
+            <div class="module_field">
+                <div class="button">
+                    <input type="submit" name="" value="Записаться">
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock content %}

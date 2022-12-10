@@ -1,0 +1,131 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нукта</title>
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <script src="{% static 'js/dynamic-header.js' %}"></script>
+    <script src="{% static 'js/scroll.js' %}"></script>
+    <script src="{% static 'js/burger_menu.js' %}"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+    <!-- CSS Стили -->
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <!-- Google Fonts Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        
+        <div class="container header__container">
+            
+            <!-- Левая часть шапки -->
+            <div class="header__left">
+                <div class="tmp"></div>
+                <div class="header__logo">
+                    <img src="{% static 'img/nukta.png' %}" alt="">
+                </div>
+
+                <!-- это три палочки в мобильном отображении -->
+                <div class="burger">
+                    <span></span>
+                </div>
+            </div>
+    
+            <!-- Центральная часть шапки -->
+            <div class="header__middle">
+    
+                <!-- Навигация по странице -->
+                <div class="header__nav">
+                    <a href="{% url 'home_page' %}" class="nav__item">ГЛАВНАЯ</a>
+                    <a href="#about_us" class="nav__item">О НАС</a>
+                    <a href="#footer" class="nav__item">КОНТАКТЫ</a>
+                    <p class="nav__item p">+993 999 999 99 99 <br> Телефон для записи</p>
+                </div>
+    
+                <!-- Телефон для записи -->
+                    <div class="header__phone">
+    
+                        <div class="phone__holder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 70"><path d="M41.75 44.3q-7.85 0-14.775-2.975-6.925-2.975-12.075-8.15Q9.75 28 6.725 21.075 3.7 14.15 3.7 6.25q0-1.05.725-1.8T6.2 3.7H14q1 0 1.75.775T16.5 6.3q0 2.2.3 4.125.3 1.925.95 3.625.25.65.075 1.325-.175.675-.675 1.175l-6 6q2.4 4.6 6 8.175 3.6 3.575 8.2 6.075l6-6q.5-.5 1.175-.675.675-.175 1.375.075 1.9.7 3.85.975 1.95.275 3.95.275 1.05 0 1.825.775.775.775.775 1.925v7.65q0 1.05-.75 1.775-.75.725-1.8.725Zm-.85-20.9q0-6.75-4.775-11.525T24.6 7.1V3.7q4.1 0 7.675 1.55t6.25 4.225q2.675 2.675 4.225 6.25Q44.3 19.3 44.3 23.4Zm-8 0q0-3.45-2.425-5.875T24.6 15.1v-3.4q4.85 0 8.275 3.425Q36.3 18.55 36.3 23.4Z"/></svg>
+                            <div class="phone__number">
+                                <a href="tel: +993 999 999 99 99">+993 999 999 99 99</a>
+                            </div>
+                        </div>
+    
+                        <div class="phone__text">
+                            Телефон для записи
+                        </div>
+                    </div>
+                
+            </div>
+            <!-- Правая часть шапки -->
+            <div class="header__right">
+                <a href="#services">
+                <div class="header__button button">
+                    Записаться онлайн
+                </div>
+                </a>
+            </div>
+            
+        </div>
+    </header>
+
+    {% block content %}
+    
+    {% endblock content %}
+
+    <!-- Футер -->
+    <footer class="footer" id="footer">
+        <div class="container footer__container">
+            <!-- Левая часть футера -->
+            <div class="footer__left">
+                <h3>Контакты</h3>
+                <hr>
+                <!-- Телефон в футере -->
+                <div class="footer__phone">
+                    <span class="material-symbols-outlined">phone_in_talk_watchface_indicator</span>
+                    <a href="tel: +993 999 999 99 99">+993 999 999 99 99</a>
+                </div>
+                <!-- Почта в футере -->
+                <div class="footer__mail">
+                    <span class="material-symbols-outlined">mail</span>
+                    <a href="mail: rahmadjanov.of@gmail.com">rahmadjanov.of@gmail.com</a>
+                </div>
+                <!-- Адрес -->
+                <div class="footer__address">Худжанд, 12 микрорайон, строение 17 «Г»</div>
+                <hr>
+                <!-- Социальные сети -->
+                <div class="footer__media">
+                    <img src="{% static 'img/tg.svg' %}" alt="telegram">
+                    <img src="{% static 'img/wa.svg' %}" alt="whats app">
+                    <img src="{% static 'img/viber.svg' %}" alt="viber">
+                </div>
+            </div>
+            <!-- Правая часть футера -->
+            <div class="footer__right">
+                <div class="footer__path">
+                    <h3>Добраться до нас просто!</h3>
+                    <div class="footer__text">
+                        Наш центр тестирования находится напротив.... 
+                        йцукенгшщзхъфывапролджэячсмитьбю.
+                        йцукенгшщзхъфывапролджэячсмитьбю. 
+                        Вы также можете воспользоваться картой.
+                    </div>
+                </div>
+                <div class="google_cart" id="map">
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

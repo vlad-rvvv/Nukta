@@ -1,0 +1,819 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin: 0 auto;
+  width: 70%;
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.header__button {
+  color: #fff;
+  font-weight: 500;
+  background-color: #15ABA2;
+  transition: background-color 0.2s linear;
+  padding: 14px 18px;
+  cursor: pointer;
+  border-radius: 15px;
+}
+.header__button:hover {
+  background-color: #0f7e77;
+}
+
+.header {
+  display: block;
+  height: 130px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  z-index: 9999;
+  transition: background-color 0.5s linear;
+}
+.header .burger {
+  display: none;
+}
+@media only screen and (max-width: 1025px) {
+  .header {
+    height: 120px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header {
+    background-color: white;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.25);
+    position: static;
+  }
+  .header .burger {
+    display: block;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .header {
+    height: 100px;
+    overflow-y: hidden;
+  }
+}
+
+.fixed {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.5s linear;
+}
+
+@media only screen and (max-width: 600px) {
+  .tmp {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    background-color: white;
+    z-index: 3;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.25);
+  }
+}
+@media only screen and (max-width: 600px) and (max-width: 400px) {
+  .tmp {
+    height: 105px;
+    margin-top: -12px;
+  }
+}
+.header__container {
+  margin: 0 auto;
+  width: 70%;
+  display: flex;
+  padding-top: 30px;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 1025px) {
+  .header__container {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header__container {
+    width: 100%;
+    display: block;
+    z-index: 9999;
+  }
+  .header__container .header__left {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: white;
+  }
+}
+
+.header__middle {
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 1025px) {
+  .header__middle {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header__middle {
+    display: block;
+  }
+}
+
+.header__logo {
+  z-index: 10;
+}
+.header__logo img {
+  height: 80px;
+}
+@media only screen and (max-width: 1025px) {
+  .header__logo img {
+    height: 70px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .header__logo img {
+    height: 60px;
+    margin-right: 200px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .header__logo img {
+    height: 50px;
+    margin-right: 150px;
+  }
+}
+
+.nav__item {
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  font-size: 14px;
+  margin-right: 25px;
+  transition: color 0.3s linear;
+}
+.nav__item.p {
+  display: none;
+}
+@media only screen and (max-width: 1025px) {
+  .nav__item {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .nav__item {
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    padding-left: 30px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
+  }
+  .nav__item.p {
+    display: flex;
+    font-size: 16px;
+  }
+}
+
+.nav__item:hover {
+  color: #d81d1d;
+}
+@media only screen and (max-width: 600px) {
+  .nav__item:hover {
+    color: white;
+  }
+}
+
+.phone__holder {
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+  transition: color 0.3s linear;
+}
+.phone__holder svg {
+  height: 30px;
+  margin-bottom: -5px;
+  padding-right: 5px;
+  fill: rgb(0, 0, 0);
+  transition: fill 0.3s linear;
+}
+@media only screen and (max-width: 600px) {
+  .phone__holder svg {
+    display: none;
+  }
+}
+
+.phone__number a {
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  transition: color 0.3s linear;
+}
+@media only screen and (max-width: 600px) {
+  .phone__number a {
+    color: #ffffff;
+  }
+}
+
+.phone__number a:hover {
+  color: #d81d1d;
+  transition: color 0.3s linear;
+}
+
+.phone__text {
+  color: rgb(0, 0, 0);
+  padding-left: 20px;
+  transition: color 0.3s linear;
+}
+@media only screen and (max-width: 600px) {
+  .phone__text {
+    color: #000000;
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header__button {
+    display: none;
+  }
+}
+
+.header__nav {
+  margin-right: 150px;
+}
+@media only screen and (max-width: 1025px) {
+  .header__nav {
+    margin-right: 50px;
+  }
+}
+.header__nav.active {
+  margin-top: 25px;
+  z-index: 2;
+}
+@media only screen and (max-width: 600px) {
+  .header__nav {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    z-index: 2;
+    background: #15ABA2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: -100%;
+    transition: ease 0.8s;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .header__nav {
+    margin-top: -120%;
+  }
+  .header__nav.active {
+    margin-top: 20px;
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.fixed_item {
+  color: #ffffff;
+}
+.fixed_item svg {
+  fill: rgb(255, 255, 255);
+}
+.fixed_item a {
+  color: #ffffff;
+}
+
+.burger {
+  display: block;
+  position: relative;
+  width: 30px;
+  height: 20px;
+  margin: 0 20px;
+  z-index: 4;
+  overflow-y: hidden;
+}
+
+.burger span {
+  background-color: #000;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  top: 9px;
+  transition: ease 0.8s;
+}
+
+.burger::after,
+.burger::before {
+  content: "";
+  background-color: #000;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  transition: ease 0.8s;
+}
+
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burger.active::before {
+  transform: rotate(-45deg);
+  top: 9px;
+}
+
+.burger.active::after {
+  transform: rotate(45deg);
+  bottom: 9px;
+}
+
+.burger.active span {
+  transform: scale(0);
+}
+
+.burger.active {
+  background: #fff;
+}
+
+@media only screen and (max-width: 400px) {
+  .burger {
+    width: 20px;
+    height: 10px;
+  }
+  .burger.active::before {
+    top: 4px;
+  }
+  .burger.active::after {
+    bottom: 4px;
+  }
+  .burger span {
+    top: 4px;
+  }
+}
+.footer {
+  background-color: #292929;
+  color: white;
+  margin-top: 5em;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+@media only screen and (max-width: 1025px) {
+  .footer {
+    padding-bottom: 2em;
+  }
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+@media only screen and (max-width: 600px) {
+  .footer__container {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Левая часть футера */
+.footer__left {
+  color: white;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1025px) {
+  .footer__left {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer__left {
+    width: 70%;
+  }
+}
+
+.footer__left h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer__left a {
+  color: white;
+}
+
+.footer__left .material-symbols-outlined {
+  margin-right: 5px;
+  height: 21px;
+  overflow-y: hidden;
+}
+@media only screen and (max-width: 400px) {
+  .footer__left .material-symbols-outlined {
+    font-size: 18px;
+    width: 20px;
+  }
+}
+
+.footer__left hr {
+  margin-bottom: 20px;
+  width: 100%;
+  size: 1px;
+  color: white;
+}
+
+.footer__left div {
+  margin-bottom: 20px;
+}
+
+.footer__phone {
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.footer__mail {
+  display: flex;
+  align-items: center;
+  overflow-y: hidden;
+}
+
+.footer__media img {
+  margin-right: 10px;
+}
+@media only screen and (max-width: 400px) {
+  .footer__media img {
+    height: 30px;
+  }
+}
+
+/* Правая часть футера */
+.footer__right {
+  display: flex;
+}
+@media only screen and (max-width: 1025px) {
+  .footer__right {
+    flex-flow: column nowrap;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer__right {
+    width: 100%;
+  }
+}
+
+.footer__path {
+  margin-right: 200px;
+}
+@media only screen and (max-width: 1441px) {
+  .footer__path {
+    margin-right: 100px;
+  }
+}
+@media only screen and (max-width: 1025px) {
+  .footer__path {
+    margin-bottom: 50px;
+    margin-right: 5px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .footer__path {
+    width: 70%;
+    margin: 20px auto;
+  }
+}
+
+.footer__path h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.footer__text {
+  width: 250px;
+  font-size: 18px;
+}
+@media only screen and (max-width: 1025px) {
+  .footer__text {
+    font-size: 14px;
+    width: 200px;
+  }
+}
+.google_cart img {
+  height: 250px;
+}
+@media only screen and (max-width: 1025px) {
+  .google_cart img {
+    height: 150px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .google_cart img {
+    width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.desc {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 5em;
+}
+.desc h1 {
+  text-align: center;
+}
+.desc p {
+  font-size: 24px;
+}
+.desc h3 {
+  font-size: 28px;
+  text-align: center;
+  font-weight: 300;
+  color: #15ABA2;
+}
+@media only screen and (max-width: 1025px) {
+  .desc h1 {
+    font-size: 26px;
+  }
+  .desc p {
+    font-size: 21px;
+  }
+  .desc h3 {
+    font-size: 26px;
+  }
+}
+
+.header {
+  position: static;
+}
+
+* {
+  overflow-x: visible;
+}
+@media only screen and (max-width: 600px) {
+  * {
+    overflow-x: hidden;
+  }
+}
+
+.calendar_div {
+  display: block;
+  margin: 0 auto;
+  margin-top: 5em;
+}
+.calendar_div h1 {
+  text-align: center;
+}
+@media only screen and (max-width: 1025px) {
+  .calendar_div h1 {
+    font-size: 26px;
+  }
+}
+
+.calendar {
+  margin: 0 auto;
+  margin-top: 3em;
+  width: 60%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width: 600px) {
+  .calendar {
+    width: 100%;
+  }
+}
+.calendar .calendar_head {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #15ABA2;
+  height: 60px;
+}
+.calendar .calendar_head h1 {
+  color: white;
+  cursor: default;
+  font-weight: 500;
+  font-size: 26;
+}
+.calendar .calendar_head div {
+  border-radius: 50%;
+  transition: background-color 0.5s linear;
+}
+.calendar .calendar_head div i {
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+.calendar .calendar_head div:active {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: background-color 0.01s linear;
+}
+.calendar .calendar_body {
+  padding-bottom: 3em;
+}
+.calendar .calendar_body .days {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 80%;
+  margin: 30px auto;
+  cursor: default;
+}
+.calendar .calendar_body .days h1 {
+  font-size: 26px;
+}
+.calendar .calendar_body .days .weknd {
+  color: red;
+}
+@media only screen and (max-width: 769px) {
+  .calendar .calendar_body .days {
+    font-size: 26px;
+  }
+}
+.calendar .calendar_body .dates {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 80%;
+  margin: 0 auto;
+}
+.calendar .calendar_body .dates div {
+  border-radius: 50%;
+  background-color: #15ABA2;
+  width: 60px;
+  height: 60px;
+  margin: 7px 0;
+  cursor: pointer;
+  transition: background-color 0.5s linear;
+}
+.calendar .calendar_body .dates div:hover {
+  background-color: #0d6761;
+  transition: background-color 0.5s linear;
+}
+.calendar .calendar_body .dates div p {
+  font-size: 26px;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+@media only screen and (max-width: 2565px) {
+  .calendar .calendar_body .dates div {
+    margin: 7px 30%;
+  }
+}
+@media only screen and (max-width: 1441px) {
+  .calendar .calendar_body .dates div {
+    margin: 7px 20%;
+  }
+}
+@media only screen and (max-width: 1025px) {
+  .calendar .calendar_body .dates div {
+    border-radius: 0%;
+    margin-left: 0%;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .calendar .calendar_body .dates div {
+    margin-left: 0%;
+    width: 50px;
+    height: 50px;
+  }
+  .calendar .calendar_body .dates div p {
+    font-size: 26px;
+    padding: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .calendar .calendar_body .dates div {
+    margin: 3px 0px;
+    width: 45px;
+    height: 45px;
+  }
+  .calendar .calendar_body .dates div p {
+    font-size: 21px;
+    padding: 10px;
+  }
+  .calendar .calendar_body .dates div:hover {
+    background-color: #15aba2;
+    transition: none 0.5s linear;
+  }
+}
+
+select:focus, input:focus {
+  outline: none;
+}
+
+.form_div {
+  margin-top: 5em;
+  padding-bottom: 5em;
+}
+.form_div h1 {
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 50%;
+}
+form .module_field {
+  margin-top: 2em;
+}
+form .module_field .button {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+}
+form .module_field .button input {
+  font-size: 18px;
+  border-radius: 25px;
+  padding: 10px 40px;
+  border: hidden;
+  background-color: #15ABA2;
+  color: white;
+  transition: background-color 0.5s;
+  cursor: pointer;
+}
+form .module_field .button input:hover {
+  transition: background-color 0.5s;
+  background-color: #0f7e77;
+}
+form .two_module {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+form .two_module .module_field {
+  width: 45%;
+}
+form p {
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+form p.error {
+  font-weight: 100;
+  margin-top: 5px;
+  color: rgb(186, 0, 0);
+  display: none;
+}
+form .field {
+  border: rgba(0, 0, 0, 0.3) solid 2px;
+  border-radius: 25px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  padding: 5px;
+}
+form .field i {
+  color: rgba(0, 0, 0, 0.3);
+  border-radius: 80%;
+  margin: 0 10px;
+  font-weight: 100;
+}
+form .field #error {
+  margin-right: 0;
+  color: rgb(186, 0, 0);
+  display: none;
+}
+form .field #hidden {
+  color: rgba(0, 0, 0, 0);
+  display: hidden;
+  margin: 0;
+  width: 0px;
+}
+form .field #empty_field {
+  margin: 0 10px;
+}
+form .field input {
+  border: hidden;
+  width: 100%;
+  font-size: 18px;
+}
+form .field select {
+  border: hidden;
+  width: 100%;
+  font-size: 18px;
+  margin: 0 10px;
+}

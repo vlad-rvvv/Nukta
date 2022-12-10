@@ -1,0 +1,90 @@
+{% extends 'main_service.html' %}
+{% load static %}
+
+{% block content %}
+<main class="main_content">
+
+    <!-- Название и описание процедуры -->
+    <div class="desc">
+        <h1>Предоставление препаратов ДКП</h1>
+        <p><br>Доконтактная профилактика (ДКП) — это чрезвычайно эффективный способ предотвращения передачи ВИЧ-инфекции при условии его регулярного применения. 
+
+            <br><br>ДКП рекомендуется людям, не зараженным ВИЧ, но попадающим в зону высокого риска заражения.
+            
+            <br><br>Те, кто решил начать ДКП, должны иметь отрицательный ВИЧ-статус и каждые три месяца заново проходить тестирование. Побочные эффекты от ДКП обычно носят умеренный и кратковременный характер. Риск развития устойчивости к препаратам ДКП крайне невелик, если перед началом лечения пациент имеет подтвержденный отрицательный ВИЧ-статус.</p>
+        <h3><br><br><br>Запишитесь к нам онлайн!</h3>
+    </div>
+
+
+    <!-- Форма -->
+    <div class="form_div">
+        <h1>Запись на прием</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="module_field">
+                <p>Имя (можно вымышленное)</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-user bx-md'></i>
+                    {{form.name}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+
+            <div class="module_field">
+                <p>Адрес</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-map bx-md'></i>
+                    {{form.address}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            
+            <div class="module_field">
+                <p>Телефон</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-phone bx-md'></i>
+                    {{form.phone_number}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            <div class="module_field">
+                <p>Пол</p>
+                <div class="field">
+                    <i class='bx bx-x-circle bx-md' id="error"></i>
+                    <i class='bx bx-phone bx-md' id="hidden"></i>
+                    {{form.sex}}
+                </div>
+                <p class="error">Необходимо заполнить поле</p>
+            </div>
+            <div class="two_module">
+                <div class="module_field">
+                    <p>Возраст</p>
+                    <div class="field">
+                        <i class='bx bx-x-circle bx-md' id="error"></i>
+                        <i class='bx bx-map bx-md' id="hidden"></i>
+                        {{form.birthday}}
+                    </div>
+                    <p class="error">Необходимо заполнить поле</p>
+                </div>
+                <div class="module_field">
+                    <p>Время записи</p>
+                    <div class="field">
+                        <i class='bx bx-x-circle bx-md' id="error"></i>
+                        <i class='bx bx-phone bx-md' id="hidden"></i>
+                        {{form.appointment_time}}
+                    </div>
+                    <p class="error">Необходимо заполнить поле</p>
+                </div>
+            </div>
+            <div class="module_field">
+                <div class="button">
+                    <input type="submit" name="" value="Записаться">
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock content %}
