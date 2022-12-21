@@ -98,6 +98,10 @@
       margin: 0 auto;
       // border: solid 2px red;
 
+      .empty_date{
+        visibility: hidden;
+      }
+
       div{
         border-radius: 50%;
         background-color: $primary;

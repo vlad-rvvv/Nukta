@@ -4,6 +4,14 @@
     display: block;
     padding-top: 5em;
     // border: solid 2px black;
+
+    @media only screen and (max-width: 1441px){
+        margin: 0 auto;
+    }
+
+    @media only screen and (max-width: 769px){
+        // margin-left: 20%;
+    }
     
     h1{
         text-align: center;
@@ -104,12 +112,20 @@
             display: block;
             width: 40%;
 
+            @media only screen and (max-width: 769px){
+                width: 100%;
+            }
+
             @media only screen and (max-width: 600px){
                 width: 100%;
             }
 
             .history{
                 margin-left: 10px;
+
+                @media only screen and (max-width: 769px){
+                    margin-left: 170px;
+                }
 
                 h1{
                     font-size: 32px;
@@ -142,6 +158,10 @@
 
                 @media only screen and (max-width: 1025px){
                     width: 100%;
+                }
+
+                @media only screen and (max-width: 769px){
+                    margin-left: 100px;
                 }
 
                 .wrapper_advantage{
