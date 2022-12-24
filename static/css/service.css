@@ -5,6 +5,11 @@ body {
   overflow-x: hidden;
   height: 100%;
 }
+@media only screen and (max-width: 426px) {
+  body {
+    overflow-x: hidden;
+  }
+}
 
 .clearfix {
   height: 0;
@@ -55,7 +60,7 @@ a {
     height: 120px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .header {
     background-color: white;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.25);
@@ -65,7 +70,7 @@ a {
     display: block;
   }
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 426px) {
   .header {
     height: 100px;
     overflow-y: hidden;
@@ -77,9 +82,10 @@ a {
   transition: all 0.5s linear;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .tmp {
     position: absolute;
+    top: 0;
     width: 100%;
     height: 120px;
     background-color: white;
@@ -87,7 +93,7 @@ a {
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.25);
   }
 }
-@media only screen and (max-width: 600px) and (max-width: 400px) {
+@media only screen and (max-width: 769px) and (max-width: 400px) {
   .tmp {
     height: 105px;
     margin-top: -12px;
@@ -102,11 +108,11 @@ a {
 }
 @media only screen and (max-width: 1025px) {
   .header__container {
-    width: 90%;
+    width: 100%;
     justify-content: space-around;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .header__container {
     width: 100%;
     display: block;
@@ -133,7 +139,7 @@ a {
     justify-content: center;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .header__middle {
     display: block;
   }
@@ -150,8 +156,9 @@ a {
     height: 70px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .header__logo img {
+    margin-top: -20%;
     height: 60px;
     margin-right: 200px;
   }
@@ -178,7 +185,7 @@ a {
     font-size: 12px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .nav__item {
     display: flex;
     align-items: center;
@@ -191,13 +198,19 @@ a {
   .nav__item.p {
     display: flex;
     font-size: 16px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .nav__item {
+    max-width: 395px;
   }
 }
 
 .nav__item:hover {
   color: #d81d1d;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .nav__item:hover {
     color: white;
   }
@@ -216,7 +229,7 @@ a {
   fill: rgb(0, 0, 0);
   transition: fill 0.3s linear;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .phone__holder svg {
     display: none;
   }
@@ -227,7 +240,7 @@ a {
   font-weight: 700;
   transition: color 0.3s linear;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .phone__number a {
     color: #ffffff;
   }
@@ -243,14 +256,14 @@ a {
   padding-left: 20px;
   transition: color 0.3s linear;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .phone__text {
     color: #000000;
     display: none;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .header__button {
     display: none;
   }
@@ -264,11 +277,7 @@ a {
     margin-right: 50px;
   }
 }
-.header__nav.active {
-  margin-top: 25px;
-  z-index: 2;
-}
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 769px) {
   .header__nav {
     position: absolute;
     width: 100%;
@@ -281,6 +290,10 @@ a {
     align-items: flex-start;
     margin-top: -100%;
     transition: ease 0.8s;
+  }
+  .header__nav.active {
+    margin-top: 0;
+    top: 14%;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -313,6 +326,7 @@ a {
   width: 30px;
   height: 20px;
   margin: 0 20px;
+  margin-top: -8%;
   z-index: 4;
   overflow-y: hidden;
 }
@@ -377,6 +391,14 @@ a {
   }
   .burger span {
     top: 4px;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .burger {
+    margin-top: 0;
+  }
+  .header__logo img {
+    margin-top: 0;
   }
 }
 .footer {
@@ -483,8 +505,14 @@ a {
     flex-flow: column nowrap;
   }
 }
-@media only screen and (max-width: 601px) {
+@media only screen and (max-width: 769px) {
   .footer__right {
+    margin-left: 5em;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .footer__right {
+    margin-left: 0;
     width: 100%;
   }
 }
@@ -587,6 +615,7 @@ a {
 
 .calendar_div {
   display: block;
+  width: 60%;
   margin: 0 auto;
   margin-top: 5em;
 }
@@ -598,17 +627,17 @@ a {
     font-size: 26px;
   }
 }
+@media only screen and (max-width: 769px) {
+  .calendar_div {
+    width: 100%;
+  }
+}
 
 .calendar {
   margin: 0 auto;
   margin-top: 3em;
-  width: 60%;
+  width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-@media only screen and (max-width: 600px) {
-  .calendar {
-    width: 100%;
-  }
 }
 .calendar .calendar_head {
   display: flex;
@@ -657,6 +686,7 @@ a {
 @media only screen and (max-width: 769px) {
   .calendar .calendar_body .days {
     font-size: 26px;
+    margin-bottom: 0;
   }
 }
 .calendar .calendar_body .dates {
@@ -673,7 +703,7 @@ a {
   background-color: #15ABA2;
   width: 60px;
   height: 60px;
-  margin: 7px 0;
+  margin: 7px auto;
   cursor: pointer;
   transition: background-color 0.5s linear;
 }
@@ -687,16 +717,6 @@ a {
   padding: 15px;
   text-align: center;
 }
-@media only screen and (max-width: 2565px) {
-  .calendar .calendar_body .dates div {
-    margin: 7px 30%;
-  }
-}
-@media only screen and (max-width: 1441px) {
-  .calendar .calendar_body .dates div {
-    margin: 7px 20%;
-  }
-}
 @media only screen and (max-width: 1025px) {
   .calendar .calendar_body .dates div {
     border-radius: 0%;
@@ -706,23 +726,22 @@ a {
 @media only screen and (max-width: 769px) {
   .calendar .calendar_body .dates div {
     margin-left: 0%;
-    width: 50px;
-    height: 50px;
+    margin: 5px auto;
   }
   .calendar .calendar_body .dates div p {
     font-size: 26px;
-    padding: 10px;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 426px) {
   .calendar .calendar_body .dates div {
-    margin: 3px 0px;
+    margin: 5px auto;
     width: 45px;
     height: 45px;
   }
   .calendar .calendar_body .dates div p {
     font-size: 21px;
-    padding: 10px;
+    padding: 0;
+    margin: 5px;
   }
   .calendar .calendar_body .dates div:hover {
     background-color: #15aba2;

@@ -97,7 +97,12 @@
         flex-flow: column nowrap;
     }
 
-    @media only screen and (max-width: 601px){
+    @media only screen and (max-width: 769px){
+        margin-left: 5em;
+    }
+
+    @media only screen and (max-width: 426px){
+        margin-left: 0;
         width: 100%;
     }
 }

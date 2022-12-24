@@ -10,7 +10,7 @@
     }
 
     @media only screen and (max-width: 769px){
-        // margin-left: 20%;
+        display: none;
     }
     
     h1{
@@ -21,9 +21,9 @@
             font-size: 26px;
         }
 
-        @media only screen and (max-width: 600px){
-            font-size: 21px;
-        }
+        // @media only screen and (max-width: 600px){
+        //     font-size: 21px;
+        // }
     }
 
     .wrapper{
@@ -43,9 +43,9 @@
             width: 60%;
             // border: solid 2px black;
 
-            @media only screen and (max-width: 600px){
-                display: none;
-            }
+            // @media only screen and (max-width: 600px){
+            //     display: none;
+            // }
             
             .top_left{
                 position: absolute;
@@ -112,20 +112,17 @@
             display: block;
             width: 40%;
 
-            @media only screen and (max-width: 769px){
-                width: 100%;
-            }
+            // @media only screen and (max-width: 769px){
+            //     width: 100%;
+            // }
 
-            @media only screen and (max-width: 600px){
-                width: 100%;
-            }
 
             .history{
                 margin-left: 10px;
 
-                @media only screen and (max-width: 769px){
-                    margin-left: 170px;
-                }
+                // @media only screen and (max-width: 769px){
+                //     margin-left: 170px;
+                // }
 
                 h1{
                     font-size: 32px;
@@ -137,9 +134,9 @@
                         font-size: 26px;
                     }
 
-                    @media only screen and (max-width: 600px){
-                        font-size: 21px;
-                    }
+                    // @media only screen and (max-width: 600px){
+                    //     font-size: 21px;
+                    // }
                 }
 
                 p{
@@ -160,9 +157,10 @@
                     width: 100%;
                 }
 
-                @media only screen and (max-width: 769px){
-                    margin-left: 100px;
-                }
+                // @media only screen and (max-width: 769px){
+                //     margin-left: 11em;
+                //     width: 100%;
+                // }
 
                 .wrapper_advantage{
                     display: flex;
@@ -179,6 +177,7 @@
                             height: 30px;
                             padding: 10px;
                         }
+
                     }
 
                     .text{

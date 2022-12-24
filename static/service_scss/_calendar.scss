@@ -10,6 +10,7 @@
 
 .calendar_div{
   display: block;
+  width: 60%;
   margin: 0 auto;
   margin-top: 5em;
 
@@ -22,17 +23,17 @@
       font-size: 26px;
     }
   }
+
+  @media only screen and (max-width: 769px){
+    width: 100%;
+  }
 }
 
 .calendar{
   margin: 0 auto;
   margin-top: 3em;
-  width: 60%;
+  width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  @media only screen and (max-width: 600px){
-    width: 100%;
-  }
 
   .calendar_head{
     display: flex;
@@ -88,6 +89,7 @@
 
       @media only screen and (max-width: 769px){
         font-size: 26px;
+        margin-bottom: 0;
       }
     }
 
@@ -107,7 +109,7 @@
         background-color: $primary;
         width: 60px;
         height: 60px;
-        margin: 7px 0;
+        margin: 7px auto;
         cursor: pointer;
         transition: background-color .5s linear;
 
@@ -123,13 +125,13 @@
           text-align: center;
         }
 
-        @media only screen and (max-width: 2565px){
-          margin: 7px 30%;
-        }
+        // @media only screen and (max-width: 2565px){
+        //   margin: 7px 30%;
+        // }
 
-        @media only screen and (max-width: 1441px){
-          margin: 7px 20%;
-        }
+        // @media only screen and (max-width: 1441px){
+        //   margin: 7px 20%;
+        // }
 
         @media only screen and (max-width: 1025px){
           border-radius: 0%;
@@ -138,23 +140,22 @@
 
         @media only screen and (max-width: 769px){
           margin-left: 0%;
-          width: 50px;
-          height: 50px;
+          margin: 5px auto;
 
           p{
             font-size: 26px;
-            padding: 10px;
           }
         }
 
-        @media only screen and (max-width: 600px){
-          margin: 3px 0px;
+        @media only screen and (max-width: 426px){
+          margin: 5px auto;;
           width: 45px;
           height: 45px;
 
           p{
             font-size: 21px;
-            padding: 10px;
+            padding: 0;
+            margin: 5px;
           }
 
           &:hover{
