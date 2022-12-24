@@ -5,6 +5,8 @@ select:focus, input:focus {outline: none;}
 .form_div{
     margin-top: 5em;
     padding-bottom: 5em;
+    width: 100%;
+
 
     h1{
         text-align: center;
@@ -14,7 +16,8 @@ select:focus, input:focus {outline: none;}
 form{
     margin: 0 auto;
     // border: solid 2px black;
-    width: 50%;
+    width: 60%;
+
     
     .module_field{
         margin-top: 2em;
@@ -111,6 +114,28 @@ form{
             width: 100%;
             font-size: 18px;
             margin: 0 10px;
+        }
+    }
+
+
+    @media only screen and (max-width: 426px){
+        .module_field{
+            margin-top: 1em;
+        }
+
+        .two_module {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+
+            .module_field{
+                width: 100%;
+            }
+        }
+
+        .field i{
+            margin: 0 ;
+            padding: 0 5px;
         }
     }
 }

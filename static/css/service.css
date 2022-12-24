@@ -756,6 +756,7 @@ select:focus, input:focus {
 .form_div {
   margin-top: 5em;
   padding-bottom: 5em;
+  width: 100%;
 }
 .form_div h1 {
   text-align: center;
@@ -763,7 +764,7 @@ select:focus, input:focus {
 
 form {
   margin: 0 auto;
-  width: 50%;
+  width: 60%;
 }
 form .module_field {
   margin-top: 2em;
@@ -845,4 +846,21 @@ form .field select {
   width: 100%;
   font-size: 18px;
   margin: 0 10px;
+}
+@media only screen and (max-width: 426px) {
+  form .module_field {
+    margin-top: 1em;
+  }
+  form .two_module {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+  }
+  form .two_module .module_field {
+    width: 100%;
+  }
+  form .field i {
+    margin: 0;
+    padding: 0 5px;
+  }
 }
