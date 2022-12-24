@@ -1,0 +1,116 @@
+@import "../common_scss/colors";
+
+select:focus, input:focus {outline: none;}
+
+.form_div{
+    margin-top: 5em;
+    padding-bottom: 5em;
+
+    h1{
+        text-align: center;
+    }
+}
+
+form{
+    margin: 0 auto;
+    // border: solid 2px black;
+    width: 50%;
+    
+    .module_field{
+        margin-top: 2em;
+
+        .button{
+            margin-top: 3em;
+            display: flex;
+            justify-content: center;
+
+            input{
+                font-size: 18px;
+                border-radius: 25px;
+                padding: 10px 40px;
+                border: hidden;
+                background-color: $primary;
+                color: white;
+                transition: background-color .5s;
+                cursor: pointer;
+
+                &:hover{
+                    transition: background-color .5s;
+                    background-color: darken($primary, $amount: 10);
+                }
+            }
+        }
+    }
+
+    .two_module{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+        .module_field{
+            width: 45%;
+        }
+    }
+
+    p{
+        font-size: 18px;
+        font-weight: 600;
+        margin-left: 10px;
+        margin-bottom: 5px;
+
+        &.error{
+            font-weight: 100;
+            margin-top: 5px;
+            color: rgb(186, 0, 0);
+            display: none;
+        }
+    }
+
+    .field{
+        border: rgb(0, 0, 0, .3) solid 2px;
+        border-radius: 25px;
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+        padding: 5px;
+
+        i{
+            color: rgb(0, 0, 0, .3);
+            // border: rgb(255, 0, 0) 2px solid;
+            border-radius: 80%;
+            margin: 0 10px;
+            font-weight: 100;
+        }
+
+        #error{
+            margin-right: 0;
+            color: rgb(186, 0, 0);
+            display: none;
+        }
+
+        #hidden{
+            color: rgba(0, 0, 0, 0);
+            display: hidden;
+            margin: 0;
+            width: 0px;
+            // border: solid 2px red;
+        }
+
+        #empty_field{
+            margin: 0 10px;
+        }
+
+        input{
+            border: hidden;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        select{
+            border: hidden;
+            width: 100%;
+            font-size: 18px;
+            margin: 0 10px;
+        }
+    }
+}

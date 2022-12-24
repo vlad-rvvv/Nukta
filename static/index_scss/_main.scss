@@ -1,0 +1,10 @@
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: 769px){
+        align-content: center;
+    }
+}

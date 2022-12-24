@@ -1,0 +1,59 @@
+@import "../common_scss/mixins";
+@import "../common_scss/inherits";
+
+.big-photo{
+    display: block;
+    position: relative;
+
+    @media only screen and (max-width: 600px){
+        display: none;   
+    }
+
+    .team-photo{
+        width: 100%;
+
+        img{
+            @media only screen and (max-width: 1025px){
+                max-width: 1024px;
+            }
+        }
+    }
+
+    .promo{
+        // display: inline-block;
+        position: absolute;
+        width: 40%;
+        left: 47%;
+        top: 50%;
+        @include transform(translate(-80%, -50%));
+        // border: solid 2px black;
+
+        .promo-text{
+            display: block;
+
+            p{
+                color: white;
+                font-size: 52px; 
+
+                @media only screen and (max-width: 1025px){
+                    font-size: 32px;
+                }
+            }
+        }
+
+        .button{
+            display: inline-flex;
+            @extend %button;
+            margin-top: 20px;
+            font-size: 28px;
+            padding: 14px 32px;
+            border-radius: 20px;
+            font-weight: 600;
+
+            @media only screen and (max-width: 1025px){
+                font-size: 20px;
+                padding: 10px 25px;
+            }
+        }
+    }
+}

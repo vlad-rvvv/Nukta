@@ -41,11 +41,19 @@
                 </div>
                 <div class="dates">
                     {% for date in dates %}
+                    {%if date == 0%}
+                    <a class="empty_date" href="{% url 'booking_page_6' service.id year month date %}">
+                        <div>
+                            <p>{{date}}</p>
+                        </div>
+                    </a>
+                    {%else%}
                     <a href="{% url 'booking_page_6' service.id year month date %}">
                         <div>
                             <p>{{date}}</p>
                         </div>
                     </a>
+                    {%endif%}
                     {% endfor %}
                 </div>
             </div>
