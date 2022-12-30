@@ -7,6 +7,7 @@ select:focus, input:focus {outline: none;}
     padding-bottom: 5em;
     width: 100%;
 
+
     h1{
         text-align: center;
     }
@@ -16,6 +17,7 @@ form{
     margin: 0 auto;
     // border: solid 2px black;
     width: 60%;
+
     
     .module_field{
         margin-top: 2em;
@@ -114,6 +116,7 @@ form{
             margin: 0 10px;
         }
     }
+
 
     @media only screen and (max-width: 426px){
         .module_field{
