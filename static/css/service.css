@@ -96,7 +96,7 @@ a {
 @media only screen and (max-width: 769px) and (max-width: 400px) {
   .tmp {
     height: 105px;
-    margin-top: -12px;
+    margin-top: 0px;
   }
 }
 .header__container {
@@ -203,7 +203,8 @@ a {
 }
 @media only screen and (max-width: 426px) {
   .nav__item {
-    max-width: 395px;
+    padding-left: 10%;
+    width: 90%;
   }
 }
 
@@ -301,7 +302,7 @@ a {
     margin-top: -120%;
   }
   .header__nav.active {
-    margin-top: 20px;
+    margin-top: -20px;
   }
 }
 
@@ -735,8 +736,8 @@ a {
 @media only screen and (max-width: 426px) {
   .calendar .calendar_body .dates div {
     margin: 5px auto;
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
   .calendar .calendar_body .dates div p {
     font-size: 21px;
