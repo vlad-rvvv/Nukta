@@ -10,9 +10,11 @@
                 <div class="promo-text">
                     <p>Пройдите бесплатное тестирование на ВИЧ у нас!</p>
                 </div>
-                <div class="button">
-                    Пройти
-                </div>
+                <a href="{% url 'HIV-test' %}">
+                    <div class="button">
+                        Пройти
+                    </div>
+                </a>
             </div>
             <div class="team-photo">
                 <img src="{% static 'img/team_photo.png' %}" alt="">
