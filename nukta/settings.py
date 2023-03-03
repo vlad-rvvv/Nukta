@@ -15,7 +15,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'base'
+    'base',
+    'admin_panel'
 ]
 
 MIDDLEWARE = [
@@ -72,13 +73,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
+USE_L10N = False
+
 USE_TZ = True
+
+DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [

@@ -1,0 +1,46 @@
+{% extends 'main_admin_trash_panel.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="sportmanList">
+    <div class="sportmanList_list">
+
+        <div class="trash__header">
+            <h3 class="trash__title__header">Имя</h3>
+            <h4 class="trash__birthday__header">Возраст</h4>
+            <h4 class="trash__telNumber__header">Номер телефона</h4>
+            <h4 class="trash__id__header">id</h4>
+            <div class="trash__time__header">Дата и время записи</div>
+        </div>
+
+        {% for booking in trash_booking %}
+            <div class="sportmanRow">
+                    <div class="sportmanRow__options">
+                        <a href="{% url 'trash_delete' booking.id %}">
+                            <span class="material-symbols-outlined material-symbols-outlined__delete">
+                                delete
+                            </span>
+                        </a>
+                        <a href="{% url 'trash_reset' booking.id %}">
+                            <span class="material-symbols-outlined material-symbols-outlined__reset">
+                                restart_alt
+                            </span>
+                        </a>
+                    </div>
+
+                    <a href="{% url 'trash_booking' booking.id %}">
+                        <h3 class="sportmanRow__title">{{booking.name}}</h3>
+                    </a>
+                
+                    <h4 class="sportmanRow__birthday">{{booking.birthday}}</h4>
+                    <h4 class="sportmanRow__telNumber">{{booking.phone_number}}</h4>
+                    <h4 class="sportmanRow__id">{{booking.id}}</h4>
+                    <div class="sportmanRow__time">{{booking.appointment_day|date:'d.m.Y'}} {{booking.appointment_time}}</div>
+            </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+{% endblock %}

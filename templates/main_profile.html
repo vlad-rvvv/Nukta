@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="{% static 'css/admin_panel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main_profile.css' %}">
+
+    <title>Панель администратора Нукта</title>
+</head>
+<body>
+    <!-- Header Starts -->
+    <header class="header__profile">
+        <div class="header__right__profile">
+            <a href="{% url 'logout' %}">
+                <button class="sidebar__compose logout__button">
+                    Выйти
+                </button>
+            </a>
+        </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+
+    <div class="main__body">
+
+        <!-- Sidebar Starts -->
+
+        <div class="sidebar">
+
+            <a href="{% url 'admin_panel' %}">
+                <div class="sidebarOption">
+                    <span class="material-symbols-outlined">
+                        list_alt
+                    </span>
+                    <h3>Список клиентов</h3>
+                </div>
+            </a>
+
+            <a href="{% url 'trash_can' %}">
+                <div class="sidebarOption">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                    <h3>Корзина</h3>
+                </div>
+            </a>
+            
+        </div>
+
+        <!-- Sidebar Ends -->
+
+        {% block content %}
+        
+        {% endblock content %}
+
+    </div>  
+</body>
+</html>

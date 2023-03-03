@@ -1,0 +1,43 @@
+{% extends 'main_admin_panel.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="sportmanList">
+    <div class="sportmanList_list">
+
+        <!-- Верхняя панель -->
+        <div class="sportmanRow__header">
+                <h3 class="sportmanRow__title__header">Имя</h3>
+                <h4 class="sportmanRow__birthday__header">Возраст</h4>
+                <h4 class="sportmanRow__telNumber__header">Номер телефона</h4>
+                <h4 class="sportmanRow__id__header">id</h4>
+                <div class="sportmanRow__time__header">Дата и время записи</div>
+        </div>
+
+        {% for booking in booking_list %}
+            <div class="sportmanRow">
+
+                <div class="sportmanRow__options">
+                    <a href="{% url 'delete_booking' booking.id %}">
+                        <span class="material-symbols-outlined material-symbols-outlined__delete">
+                            delete
+                        </span>
+                    </a>
+                </div>
+
+                <a href="{% url 'booking' booking.id %}">
+                    <h3 class="sportmanRow__title">{{booking.name}}</h3>
+                </a>
+
+                <h4 class="sportmanRow__birthday">{{booking.birthday}}</h4>
+                <h4 class="sportmanRow__telNumber">{{booking.phone_number}}</h4>
+                <h4 class="sportmanRow__id">{{booking.id}}</h4>
+                <div class="sportmanRow__time">{{booking.appointment_day|date:'d.m.Y'}} {{booking.appointment_time}}</div>
+            </div>
+        {% endfor %}
+        
+    </div>
+</div>
+
+{% endblock %}
