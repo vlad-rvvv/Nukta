@@ -648,6 +648,9 @@ a {
   background-color: #15ABA2;
   height: 60px;
 }
+.calendar .calendar_head .disabled {
+  visibility: hidden;
+}
 .calendar .calendar_head h1 {
   color: white;
   cursor: default;

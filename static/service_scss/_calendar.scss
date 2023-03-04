@@ -43,6 +43,10 @@
     background-color: $primary;
     height: 60px;
 
+    .disabled{
+      visibility:hidden;
+    }
+
     h1{
       color: white;
       cursor: default;
