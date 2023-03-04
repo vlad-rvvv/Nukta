@@ -21,26 +21,35 @@ def month_dates(pk):
         'December':'Декабрь',
     }
 
-     #Достаем услугу из бд
+    #Достаем услугу из бд
     service = Service.objects.get(id=pk)
     #Определяем текущий год и месяц (системы)
     now = datetime.datetime.now()
     year = now.year
     month = now.month
+    month_next = now.month + 1
+    day = now.day
 
     #Используем календарь, вставляем в качестве параметров интересующее нас время
     cal = calendar.Calendar(firstweekday=0)
     month_days = cal.monthdayscalendar(year, month)
+    month_days_next = cal.monthdayscalendar(year, month_next)
 
     #Перебираем полученный список из дат текущего месяца, создаем новый список
     dates = []
+    dates_next = []
+
+    for i in range(len(month_days_next)):
+        for j in range(len(month_days_next[i])):
+            dates_next.append(month_days_next[i][j])
+
     for i in range(len(month_days)):
         for j in range(len(month_days[i])):
             dates.append(month_days[i][j])
     
     month_name = calendar.month_name[month]
     month_translate = translate[str(month_name)]
-    context = {'service':service, 'dates':dates, 'year':year, 'month':month, 'month_translate':month_translate}
+    context = {'service':service, 'dates':dates, 'year':year, 'month':month, 'month_translate':month_translate, 'day':day, 'dates_next':dates_next}
     return context
 
 def home(request):

@@ -670,6 +670,7 @@ a {
   background-color: rgba(0, 0, 0, 0.3);
   transition: background-color 0.01s linear;
 }
+
 .calendar .calendar_body {
   padding-bottom: 3em;
 }
@@ -702,6 +703,15 @@ a {
 .calendar .calendar_body .dates .empty_date {
   visibility: hidden;
 }
+
+.calendar .calendar_body .dates .grey_date{
+  pointer-events: none;
+}
+
+.calendar .calendar_body .dates .grey_date div{
+  background-color: #ccc;
+}
+
 .calendar .calendar_body .dates div {
   border-radius: 50%;
   background-color: #15ABA2;
@@ -867,4 +877,8 @@ form .field select {
     margin: 0;
     padding: 0 5px;
   }
+}
+
+.service__header-button{
+  display: none;
 }
