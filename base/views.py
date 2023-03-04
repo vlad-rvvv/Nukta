@@ -27,6 +27,7 @@ def month_dates(pk):
     now = datetime.datetime.now()
     year = now.year
     month = now.month
+    day = now.day
 
     #Используем календарь, вставляем в качестве параметров интересующее нас время
     cal = calendar.Calendar(firstweekday=0)
@@ -40,7 +41,7 @@ def month_dates(pk):
     
     month_name = calendar.month_name[month]
     month_translate = translate[str(month_name)]
-    context = {'service':service, 'dates':dates, 'year':year, 'month':month, 'month_translate':month_translate}
+    context = {'service':service, 'dates':dates, 'year':year, 'month':month, 'month_translate':month_translate, 'day':day}
     return context
 
 def home(request):

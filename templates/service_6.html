@@ -48,11 +48,19 @@
                         </div>
                     </a>
                     {%else%}
-                    <a href="{% url 'booking_page_6' service.id year month date %}">
-                        <div>
-                            <p>{{date}}</p>
-                        </div>
-                    </a>
+                        {% if date <= day %}
+                        <a class="grey_date" href="">
+                            <div>
+                                <p>{{date}}</p>
+                            </div>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'booking_page_6' service.id year month date %}">
+                            <div>
+                                <p>{{date}}</p>
+                            </div>
+                        </a>
+                        {% endif %}
                     {%endif%}
                     {% endfor %}
                 </div>
