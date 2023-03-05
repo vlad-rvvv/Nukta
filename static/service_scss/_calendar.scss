@@ -14,6 +14,8 @@
   margin: 0 auto;
   margin-top: 5em;
 
+
+
   h1{
     text-align: center;
   }
@@ -34,6 +36,10 @@
   margin-top: 3em;
   width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  
+  .disable{
+    display: none!important;
+  }
 
   .calendar_head{
     display: flex;
@@ -46,6 +52,8 @@
     .disabled{
       visibility:hidden;
     }
+
+    
 
     h1{
       color: white;
@@ -98,6 +106,83 @@
     }
 
     .dates{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      width: 80%;
+      margin: 0 auto;
+      // border: solid 2px red;
+
+      .empty_date{
+        visibility: hidden;
+      }
+
+      div{
+        border-radius: 50%;
+        background-color: $primary;
+        width: 60px;
+        height: 60px;
+        margin: 7px auto;
+        cursor: pointer;
+        transition: background-color .5s linear;
+
+        &:hover{
+          background-color: darken($primary, $amount: 15%);
+          transition: background-color .5s linear;
+        }
+
+        p{
+          font-size: 26px;
+          color: white;
+          padding: 15px;
+          text-align: center;
+        }
+
+        // @media only screen and (max-width: 2565px){
+        //   margin: 7px 30%;
+        // }
+
+        // @media only screen and (max-width: 1441px){
+        //   margin: 7px 20%;
+        // }
+
+        @media only screen and (max-width: 1025px){
+          border-radius: 0%;
+          margin-left: 0%;
+        }
+
+        @media only screen and (max-width: 769px){
+          margin-left: 0%;
+          margin: 5px auto;
+
+          p{
+            font-size: 26px;
+          }
+        }
+
+        @media only screen and (max-width: 426px){
+          margin: 5px auto;;
+          width: 40px;
+          height: 40px;
+
+          p{
+            font-size: 21px;
+            padding: 0;
+            margin: 5px;
+          }
+
+          &:hover{
+            background-color: darken($primary, $amount: 0%);
+            transition: none .5s linear;
+          }
+
+          // &:active{
+          //   background-color: darken($primary, $amount: 15%);
+          //   transition: background-color .5s linear;
+          // }
+        }
+      }
+    }
+    .dates_next{
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       width: 80%;

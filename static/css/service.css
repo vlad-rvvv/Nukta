@@ -640,6 +640,9 @@ a {
   width: 100%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+.calendar .disable {
+  display: none !important;
+}
 .calendar .calendar_head {
   display: flex;
   flex-flow: row nowrap;
@@ -670,7 +673,6 @@ a {
   background-color: rgba(0, 0, 0, 0.3);
   transition: background-color 0.01s linear;
 }
-
 .calendar .calendar_body {
   padding-bottom: 3em;
 }
@@ -703,15 +705,6 @@ a {
 .calendar .calendar_body .dates .empty_date {
   visibility: hidden;
 }
-
-.calendar .calendar_body .dates .grey_date{
-  pointer-events: none;
-}
-
-.calendar .calendar_body .dates .grey_date div{
-  background-color: #ccc;
-}
-
 .calendar .calendar_body .dates div {
   border-radius: 50%;
   background-color: #15ABA2;
@@ -758,6 +751,65 @@ a {
     margin: 5px;
   }
   .calendar .calendar_body .dates div:hover {
+    background-color: #15aba2;
+    transition: none 0.5s linear;
+  }
+}
+.calendar .calendar_body .dates_next {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 80%;
+  margin: 0 auto;
+}
+.calendar .calendar_body .dates_next .empty_date {
+  visibility: hidden;
+}
+.calendar .calendar_body .dates_next div {
+  border-radius: 50%;
+  background-color: #15ABA2;
+  width: 60px;
+  height: 60px;
+  margin: 7px auto;
+  cursor: pointer;
+  transition: background-color 0.5s linear;
+}
+.calendar .calendar_body .dates_next div:hover {
+  background-color: #0d6761;
+  transition: background-color 0.5s linear;
+}
+.calendar .calendar_body .dates_next div p {
+  font-size: 26px;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+@media only screen and (max-width: 1025px) {
+  .calendar .calendar_body .dates_next div {
+    border-radius: 0%;
+    margin-left: 0%;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .calendar .calendar_body .dates_next div {
+    margin-left: 0%;
+    margin: 5px auto;
+  }
+  .calendar .calendar_body .dates_next div p {
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .calendar .calendar_body .dates_next div {
+    margin: 5px auto;
+    width: 40px;
+    height: 40px;
+  }
+  .calendar .calendar_body .dates_next div p {
+    font-size: 21px;
+    padding: 0;
+    margin: 5px;
+  }
+  .calendar .calendar_body .dates_next div:hover {
     background-color: #15aba2;
     transition: none 0.5s linear;
   }
@@ -877,8 +929,4 @@ form .field select {
     margin: 0;
     padding: 0 5px;
   }
-}
-
-.service__header-button{
-  display: none;
 }

@@ -48,8 +48,17 @@ def month_dates(pk):
             dates.append(month_days[i][j])
     
     month_name = calendar.month_name[month]
+    month_name_next = calendar.month_name[month+1]
     month_translate = translate[str(month_name)]
-    context = {'service':service, 'dates':dates, 'year':year, 'month':month, 'month_translate':month_translate, 'day':day, 'dates_next':dates_next}
+    month_next_translate = translate[str(month_name_next)]
+    context = {'service':service, 
+               'dates':dates, 
+               'year':year, 
+               'month':month, 
+               'month_translate':month_translate, 
+               'month_next_translate':month_next_translate, 
+               'day':day, 
+               'dates_next':dates_next}
     return context
 
 def home(request):
