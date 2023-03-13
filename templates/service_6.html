@@ -21,11 +21,12 @@
 
         <div class="calendar">
             <div class="calendar_head">
-                <div>
+                <div class='left-arrow disabled'>
                     <i class="bx bx-chevron-left bx-md"></i>
                 </div>
-                <h1>{{month_translate}}</h1>
-                <div>
+                <h1 class='current'>{{month_translate}}</h1>
+                <h1 class='next disable'>{{month_next_translate}}</h1>
+                <div class='right-arrow'>
                     <i class="bx bx-chevron-right bx-md"></i>
                 </div>
             </div>
@@ -42,17 +43,50 @@
                 <div class="dates">
                     {% for date in dates %}
                     {%if date == 0%}
-                    <a class="empty_date" href="{% url 'booking_page_6' service.id year month date %}">
+                    <a class="empty_date" href="{% url 'booking_page_1' service.id year month date %}">
                         <div>
                             <p>{{date}}</p>
                         </div>
                     </a>
                     {%else%}
-                    <a href="{% url 'booking_page_6' service.id year month date %}">
+                        {% if date <= day %}
+                        <a class="grey_date" href="">
+                            <div>
+                                <p>{{date}}</p>
+                            </div>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'booking_page_1' service.id year month date %}">
+                            <div>
+                                <p>{{date}}</p>
+                            </div>
+                        </a>
+                        {% endif %}
+                    {%endif%}
+                    {% endfor %}
+                </div>
+                <div class="dates_next disable">
+                    {% for date in dates_next %}
+                    {%if date == 0%}
+                    <a class="empty_date" href="{% url 'booking_page_1' service.id year month_next date %}">
                         <div>
                             <p>{{date}}</p>
                         </div>
                     </a>
+                    {%else%}
+                        {% if date <= day %}
+                        <a class="grey_date" href="">
+                            <div>
+                                <p>{{date}}</p>
+                            </div>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'booking_page_1' service.id year month_next date %}">
+                            <div>
+                                <p>{{date}}</p>
+                            </div>
+                        </a>
+                        {% endif %}
                     {%endif%}
                     {% endfor %}
                 </div>

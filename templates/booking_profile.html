@@ -1,0 +1,108 @@
+{% extends 'main_profile.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="sportmanList profileBody">
+    <!-- Контент профиля -->
+    <div class="profile__content">
+        <div class="profile__inf">
+            <div class="profile__inf__title">
+                <h3 class="profile__id">id: {{booking.id}}</h3>
+                <h3 class="profile__title">Информация о клиенте</h3>
+            </div>
+            <div class="profile_inf__content">
+                <div class="profile__form">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form__input">
+                            <label class="label_field">Услуга:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.title}}
+                            </div>
+                        </div>
+
+                        <div class="form__input">
+                            <label class="label_field">Имя:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.name}}
+                            </div>
+                        </div>
+        
+                        <div class="form__input">
+                            <label class="label_field">Телефон:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.phone_number}}
+                            </div>
+                        </div>
+        
+                        <div class="form__input">
+                            <label class="label_field">Пол:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.sex}}
+                            </div>
+                        </div>
+        
+                        <div class="form__input">
+                            <label class="label_field">Возраст:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.birthday}}
+                            </div>
+                        </div>
+                        
+                        <div class="form__input">
+                            <label class="label_field">Адрес:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.address}}
+                            </div>
+                        </div>
+        
+                        <div class="form__input">
+                            <label class="label_field">Дата записи:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.appointment_day}}
+                            </div>
+                        </div>
+
+                        <div class="form__input">
+                            <label class="label_field">Время записи:</label>
+                            <div class="profile_input_field">
+                                {{booking_form.appointment_time}}
+                            </div>
+                        </div>
+                    
+                        <div class="input_field button_profile">
+                            <input type="submit" value="Сохранить">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile__bookingList">
+        <div class="bookingList__title">
+            <h3>Список клиентов</h3>
+        </div>
+
+        <div class="bookingList__content">
+            {% for booking in booking_list %}
+            <a href="{% url 'booking' booking.id %}">
+                <div class="bookingList__content_element">
+                    <div class="content_element__name">
+                        {{booking.name}}
+                    </div>
+
+                    <div class="content_element__id">
+                        {{booking.phone_number}}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+
+{% endblock content %}
+

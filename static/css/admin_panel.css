@@ -1,0 +1,422 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+    color: #000000;
+}
+
+/* =================================HEADER======================================= */
+
+.header{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F6F8FC;
+}
+
+.header__middle{
+    display: flex;
+    flex: 0.3;
+    align-items: center;
+    background-color: #EAF1FB;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.material-symbols-outlined {
+    color: grey;
+}
+
+.header__middle form{
+    width: 100%;
+}
+
+.header__middle input{
+    border: none;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background-color: transparent;
+    font-size: medium;
+}
+
+.header__right{
+    display: flex;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.header__right span{
+    cursor: pointer;
+}
+
+/* =========================================SIDEBAR=================================================== */
+
+.sidebar{
+    flex: 0.3;
+    max-width: 300px;
+    padding-right: 20px;
+    background-color: #F6F8FC;
+}
+
+.sidebar__compose{
+    margin-top: 3px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    width: 100px;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 500;
+    padding: 15px;
+    border-radius: 30px;
+    background-color: #71AAFF;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    box-shadow: 0px 2px 5px -2px rgba(121, 105, 237, 0.75);
+}
+
+.logout__button{
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 23px;
+}
+
+.sidebar__compose span{
+    margin-right: 5px;
+}
+
+.sidebar__compose .material-symbols-outlined{
+    margin-right: 5px;
+    color: white;
+}
+
+.sidebar__compose:hover{
+    background-color: #408bfc;
+}
+
+.sidebarOption{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 0 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.sidebarOption .material-symbols-outlined{
+    padding: 5px;
+}
+
+.sidebarOption h3{
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.sidebarOption:hover,
+.sidebarOption:hover h3,
+.sidebarOption:hover .material-symbols-outlined{
+    background-color: #EAEBEF;
+}
+
+.sidebarOption__active,
+.sidebarOption__active h3,
+.sidebarOption__active .material-symbols-outlined{
+    background-color: #D3E3FD;
+    color: #202124;
+}
+
+.sidebarOption__active h3{
+    font-weight: 800;
+}
+
+/* ==========================================MAIN BODY===================================================== */
+.main__body{
+    display: flex;
+    height: 100vh;
+    background-color: #F6F8FC;
+}
+
+body{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+/* ==========================================EMAIL LIST===================================================== */
+.sportmanList{
+    flex: 1;
+    overflow: scroll;
+    background-color: white;
+    border-radius: 25px;
+    margin-right: 40px;
+}
+
+.sportmanRow__options{
+    display: flex;
+    align-items: center;
+}
+
+/* =================material-symbols-outlined================== */
+
+.sportmanRow .material-symbols-outlined{
+    color: grey;
+}
+
+.sportmanRow__options span:hover{
+    color:#71AAFF;
+}
+
+/* ==================material-symbols-outlined==================== */
+
+.sportmanRow__options .material-symbols-outlined{
+    margin: 7px;
+}
+
+.sportmanRow__left{
+    display: flex;
+    align-items: center;
+}
+
+.sportmanRow__right{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.sportmanRow{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+    cursor: pointer;
+}
+
+.sportmanRow:hover{
+    border-top: 1px solid whitesmoke;
+    box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.24);
+}
+
+.sportmanRow__title{
+    width: 248px;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+.sportmanRow__title:hover{
+    color: #71AAFF;
+}
+
+.sportmanRow__time{
+    padding-right: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    width: 100%;
+    text-align: right;
+}
+
+.sportmanRow h4{
+    padding: 0px 50px;
+}
+
+/* ======================Create Popup Starts===================== */
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+}
+
+.popup:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup__body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+}
+
+/* Видимая часть попапа */
+.popup__content{
+    background-color: #fff;
+    color: #000;
+    width: 600px;
+    padding: 30px 30px 30px 30px;;
+    position: relative;
+}
+
+/* Закрывающая кнопка */
+.popup__close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Форма добавления спортсмена */
+.popup__content .form{
+    padding: 0px 30px 0px 30px;
+}
+
+.popup__title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+  }
+
+.popup__title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    height: 3px;
+    width: 30px;
+    background-color: #4070f4;
+    border-radius: 25px;
+}
+
+.input_field{
+    margin-top: 30px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+  
+.input_field input{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input_field input:focus:valid{
+    border-bottom-color: #4070f4;
+}
+  
+ 
+.button{
+    margin-top: 35px;
+}
+  
+.button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+  
+.button input:hover{
+    background-color: #265df2 ;
+}
+
+/* ======================Create Popup Ends===================== */
+
+.sportmanRow__left__block{
+    display: flex;
+}
+
+.sportmanRow__address{
+    width: 350px;
+}
+
+.input_field select{
+    width: 100%;
+    height: 100%;
+}
+
+.sportmanRow__header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.sportmanRow__title__header{
+    padding-left: 50px;
+    width: 325px;
+}
+
+.sportmanRow__birthday__header{
+    width: 60px;
+}
+
+.sportmanRow__telNumber__header{
+    padding-left: 65px;
+    width: 120px;
+}
+
+.sportmanRow__id__header{
+    padding-left: 80px;
+    width: 120px;
+}
+
+.sportmanRow__time__header{
+    padding-left: 570px;
+    font-weight: 700;
+}
+
+.choose{
+    font-size: 18px;
+    color: #5d5d5d;
+    padding-bottom: 5px;
+}
+
+.trash__header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+}
+
+.trash__title__header{
+    padding-left: 87px;
+    width: 325px;
+}
+
+.trash__telNumber__header{
+    padding-left: 65px;
+}
+
+.trash__id__header{
+    padding-left: 83px;
+}
+
+.trash__time__header{
+    padding-left: 630px;
+    font-weight: 700;
+}

@@ -1,0 +1,213 @@
+/* Контент цифрового профиля спрортсмена */
+
+.profileBody{
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    background-color:#F6F8FC;
+    margin-right: 40px;
+}
+
+.profile__content{
+    flex: 0.7;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    scrollbar-color: #71AAFF #fff;
+}
+
+.profile__inf{
+    padding: 30px 100px;
+}
+
+.profile__inf .profile__title{
+    font-size: 20px;
+}
+
+.profile_inf__content{
+    display: flex;
+}
+
+.profile__inf__title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile__id{
+    text-align: left;
+    width: 200px;
+    font-size: 16px;
+    color: rgb(98, 98, 98);
+    padding-top: 5px;
+}
+
+.profile__title{
+    margin-right: 200px;
+    text-align: center;
+    width: 100%;
+}
+
+.profile__form{
+    width: 95%;
+}
+
+.profile__form select{
+    width: 100%;
+    height: 80%;
+    font-size: 16px;
+    background-color: #eaeaea;
+    border: 2px solid #ccc;
+    padding: 0 1em 0 0;
+    margin: 0;
+    cursor: inherit;
+    line-height: inherit;
+}
+
+.form__input{
+    display: flex;
+    text-align:center;
+    align-items:flex-end;
+    margin-top: 30px;
+}
+
+.profile_input_field{
+    margin-left: 20px;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+}
+
+.profile_input_field input{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+    padding-top: 13px;
+}
+
+.profile_input_field input:focus{
+    border-bottom: 2px solid #71AAFF;
+}
+
+.label_field{
+    font-size: 18px;
+    font-weight: 400;
+    width: 250px;
+}
+
+.button_profile input{
+    border: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #71AAFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 20%;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.button_profile input:hover{
+    background-color: #4a91fb ;
+}
+
+/* Меню взаимодействия с цифровым профилем спортсмена */
+
+.profile__sidebar{
+    flex: 0.2;
+    background-color: #F6F8FC;
+}
+
+.profile__sidebarOption{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    padding: 0 10px;
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    border-bottom: 1px solid whitesmoke;
+    border-left: 1px solid whitesmoke;
+}
+
+.profile__sidebarOption h3{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.profile__sidebarOption:hover{
+    box-shadow: 3px 0px 5px rgb(219, 219, 219);
+}
+
+.profile__sidebarOption_active{
+    background-color: #fff;
+    color: #000;
+    border-left: none;
+    border-bottom: 2px solid #71AAFF;
+}
+
+.profile__sidebarOption_active h3{
+    font-weight: 600;
+}
+
+.profile__sidebarOption_active:hover{
+    box-shadow: none;
+}
+
+/* Список записей справа */
+.profile__bookingList{
+    flex: 0.25;
+    margin-left: 30px;
+    background-color: white;
+    border-radius: 15px;
+    padding-top: 30px;
+}
+
+.bookingList__title h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bookingList__content_element{
+    display: flex;
+    padding: 15px 0px;
+    border-bottom: 1px solid #ccc;
+}
+
+.bookingList__content_element:hover{
+    border-bottom: 2px solid #71AAFF;
+}
+
+.content_element__name{
+    font-size: 18px;
+    padding-left: 30px;
+    width: 220px;
+}
+
+.content_element__id{
+    font-size: 18px;   
+}
+
+.header__profile{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: #F6F8FC;
+    justify-content: end;
+}
+
+.header__right__profile{
+    padding-right: 118px;
+}

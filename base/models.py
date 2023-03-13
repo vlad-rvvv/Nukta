@@ -32,7 +32,7 @@ class Booking(models.Model):
     sex = models.CharField(max_length=20, choices=SEX_CHOICES)
     birthday = models.CharField(max_length=3)
     address = models.CharField(max_length=200, blank=True)
-    appointment_day = models.DateField()
+    appointment_day = models.DateField(null=True, blank=True)
     appointment_time = models.CharField(max_length=20, choices=TIME_CHOICES)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sing in</title>
+    <link rel="stylesheet" href="{% static 'css/login_page.css' %}">
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body> 
+
+    <div class="container">
+        <div class="form">
+            <span class="title">Вход</span>
+
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input_field">
+                    <input type="text" placeholder="Логин" name="username">
+                    <span class="material-symbols-outlined icon">
+                        mail
+                    </span>
+                </div>
+
+                <div class="input_field">
+                    <input type="password" placeholder="Пароль" name="password">
+                    <span class="material-symbols-outlined icon">
+                        lock
+                    </span>
+                    <span class="material-symbols-outlined eye">
+                        visibility_off
+                    </span>
+                </div>
+                
+                <div class="input_field button">
+                    <input type="submit" value="Войти">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

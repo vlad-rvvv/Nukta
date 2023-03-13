@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="{% static 'css/admin_panel.css' %}">
+
+    <title>Панель администратора Нукта</title>
+</head>
+<body>
+    <!-- Header Starts -->
+    <header class="header">
+        <div class="header__left">
+            
+        </div>
+
+        <div class="header__middle">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+            <form action="{% url 'trash_can' %}" method="GET">
+                <input type="text" placeholder="Поиск по клиентам" name="q">
+            </form>
+        </div>
+
+        <div class="header__right">
+            <a href="{% url 'logout' %}">
+                <button class="sidebar__compose logout__button">
+                    Выйти
+                </button>
+            </a>
+        </div>
+    </header>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+
+    <div class="main__body">
+
+        <!-- Sidebar Starts -->
+
+        <div class="sidebar">
+
+            <a href="{% url 'admin_panel' %}">
+                <div class="sidebarOption">
+                    <span class="material-symbols-outlined">
+                        list_alt
+                    </span>
+                    <h3>Список клиентов</h3>
+                </div>
+            </a>
+
+            <a href="{% url 'trash_can' %}">
+                <div class="sidebarOption sidebarOption__active">
+                    <span class="material-symbols-outlined">
+                        delete
+                    </span>
+                    <h3>Корзина</h3>
+                </div>
+            </a>
+            
+        </div>
+
+        <!-- Sidebar Ends -->
+
+        {% block content %}
+        
+        {% endblock content %}
+
+    </div>
+
+    <!-- Main Body Ends -->
+
+    <!-- Pop-up Create a digital profile Starts -->
+    <div class="popup" id="create_popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <a href="{% url 'trash_can' %}" class="popup__close close-popup">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </a>
+                <div class="popup__title">Добавить запись</div>
+                    <div class="form">
+                        <form action="{% url 'admin_panel' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="input_field">
+                                {{booking_form.name}}
+                            </div>
+
+                            <div class="input_field">
+                                {{booking_form.birthday}}
+                            </div>
+
+                            <div class="input_field">
+                                {{booking_form.sex}}
+                            </div>
+
+                            <div class="input_field">
+                                {{booking_form.phone_number}}
+                            </div>
+
+                            <div class="input_field">
+                                {{booking_form.title}}
+                            </div>
+                            
+                            <div class="input_field">
+                                {{booking_form.address}}
+                            </div>
+
+                            <div class="input_field">
+                                {{booking_form.appointment_day}}
+                            </div>
+                            
+                            <div class="input_field">
+                                {{booking_form.appointment_time}}
+                            </div>
+                            
+                            <div class="input_field button">
+                                <input type="submit" value="Добавить">
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

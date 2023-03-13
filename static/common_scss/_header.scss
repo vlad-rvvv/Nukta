@@ -59,7 +59,7 @@
 
         @media only screen and (max-width: 400px){
             height: 105px;
-            margin-top: -12px;
+            margin-top: 0px;
         }
     }
 }
@@ -166,8 +166,8 @@
     }
 
     @media only screen and (max-width: 426px){
-        max-width: 395px;
-        
+        padding-left: 10%;
+        width: 90%;
     }
 }
 
@@ -264,7 +264,7 @@
     @media only screen and (max-width: 400px){
 
         &.active{
-            margin-top: 20px;
+            margin-top: -20px;
         }
 
         margin-top: -120%;
