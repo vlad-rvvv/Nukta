@@ -706,6 +706,13 @@ a {
 .calendar .calendar_body .dates .empty_date {
   visibility: hidden;
 }
+.calendar .calendar_body .dates .grey_date{
+  pointer-events: none;
+}
+
+.calendar .calendar_body .dates .grey_date div {
+  background-color: #ccc;
+}
 .calendar .calendar_body .dates div {
   border-radius: 50%;
   background-color: #15ABA2;

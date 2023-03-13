@@ -58,7 +58,9 @@ def month_dates(pk):
                'month_translate':month_translate, 
                'month_next_translate':month_next_translate, 
                'day':day, 
-               'dates_next':dates_next}
+               'dates_next':dates_next,
+               'month_next':month_next
+               }
     return context
 
 def home(request):
