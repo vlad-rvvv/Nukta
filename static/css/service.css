@@ -455,8 +455,9 @@ a {
 
 .footer__left .material-symbols-outlined {
   margin-right: 5px;
+  width: 21px;
   height: 21px;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 @media only screen and (max-width: 401px) {
   .footer__left .material-symbols-outlined {
